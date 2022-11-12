@@ -174,7 +174,7 @@ class KNNClassifier(BaseNeighbors, ClassifierMixin):
         proba = []
 
         self.classes = list(set().union(self.classes,
-                                        np.unique(self.data_window.targets_buffer.astype('int'))))
+                                        np.unique(int(self.data_window.targets_buffer))))
 
         new_dist, new_ind = self._get_neighbors(X)
         for i in range(r):
